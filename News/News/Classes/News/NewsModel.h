@@ -38,7 +38,7 @@
  *  加载指定的新闻组
  */
 
-+(void)LoadNewsListWithURLString:(NSString *)urlString;
++(void)LoadNewsListWithURLString:(NSString *)urlString finished:(void(^)(NSArray *newsList))finished;
 
 
 

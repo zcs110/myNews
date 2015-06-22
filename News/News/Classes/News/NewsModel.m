@@ -13,9 +13,9 @@
 /**
  *  遍历字典给属性赋值
  *
- *  @param dic <#dic description#>
+ *  @param dic 包含所有信息的数组
  *
- *  @return <#return value description#>
+ *  @return 包含指定属性的数组
  */
 + (instancetype)newsWithDic:(NSDictionary *)dic{
 
@@ -47,7 +47,7 @@ const char *kPropertiesKey = "kPropertiesKey";
     unsigned int Count = 0;
     objc_property_t *list = class_copyPropertyList([self class], &Count);
     
-    NSLog(@"%u",Count);
+    //NSLog(@"%u",Count);
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:Count];
     
     for (unsigned int i=0; i<Count; i++) {
@@ -62,13 +62,20 @@ const char *kPropertiesKey = "kPropertiesKey";
     return objc_getAssociatedObject(self, kPropertiesKey);
 }
 
-+(void)LoadNewsListWithURLString:(NSString *)urlString{
+- (NSString *)description {
+    NSArray *propertis = [self.class loadProperty];
+    NSDictionary *dict = [self dictionaryWithValuesForKeys:propertis];
+    
+    return [NSString stringWithFormat:@"<%@: %p> %@", self.class, self, dict];
+}
+
++(void)LoadNewsListWithURLString:(NSString *)urlString finished:(void (^)(NSArray *))finished{
 
     [[NetWorkTools ShareNetWorkTools] GET:urlString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
-        NSLog(@"%@", [responseObject keyEnumerator].nextObject);
+        //NSLog(@"%@", [responseObject keyEnumerator].nextObject);
         NSArray *array = responseObject[[responseObject keyEnumerator].nextObject];
-        NSLog(@"%@",array);
+        //NSLog(@"%@",array);
         
         NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:array.count];
         /**
@@ -77,7 +84,8 @@ const char *kPropertiesKey = "kPropertiesKey";
         for (NSDictionary *dic in array) {
             [arrayM addObject:[self newsWithDic:dic]];
         }
-        NSLog(@"%@",arrayM);
+        //NSLog(@"%@",arrayM);
+        finished(arrayM.copy);
         
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         
