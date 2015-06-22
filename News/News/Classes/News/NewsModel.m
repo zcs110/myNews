@@ -47,7 +47,7 @@ const char *kPropertiesKey = "kPropertiesKey";
     unsigned int Count = 0;
     objc_property_t *list = class_copyPropertyList([self class], &Count);
     
-    //NSLog(@"%u",Count);
+    NSLog(@"%u ",Count);
     NSMutableArray *arrayM = [NSMutableArray arrayWithCapacity:Count];
     
     for (unsigned int i=0; i<Count; i++) {

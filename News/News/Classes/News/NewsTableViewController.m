@@ -30,7 +30,7 @@
     //[NewsModel LoadNewsListWithURLString:@"T1348647853363/0-20.html"];
 
     __weak typeof(self) weakSelf = self;
-    [NewsModel LoadNewsListWithURLString:@"T1422935072191/0-40.html" finished:^(NSArray *newsList) {
+    [NewsModel LoadNewsListWithURLString:@"T1348647853363/0-40.html" finished:^(NSArray *newsList) {
         weakSelf.NewsList = newsList;
     }];
 }
@@ -48,12 +48,16 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *reusedID = nil;
+    static NSString *reusedID = @"NormalCell";
 
     NewsModel *model = self.NewsList[indexPath.row];
     if (model.imgextra.count == 2) {
         reusedID = @"ThreeIconCell";
 
+    }else if(model.isBigImage){
+        
+        reusedID = @"BigImageCell";
+    
     }else{
         reusedID = @"NormalCell";
     

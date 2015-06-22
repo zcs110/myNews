@@ -72,16 +72,13 @@
                                     <outlet property="titleLable" destination="TjQ-e3-LM6" id="jU7-G9-6oR"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BigImageCell" rowHeight="130" id="QEY-L4-2D5" userLabel="BigImageCell" customClass="NewsNormalCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BigImageCell" rowHeight="240" id="QEY-L4-2D5" userLabel="BigImageCell" customClass="NewsNormalCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEY-L4-2D5" id="Sv1-Mr-gUh">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vlx-XY-cdl">
-                                            <rect key="frame" x="8" y="18" width="578.5" height="87"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="87" id="xaU-35-Bsn"/>
-                                            </constraints>
+                                            <rect key="frame" x="8" y="19" width="578.5" height="200.5"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0FH-pk-R32" userLabel="title">
                                             <rect key="frame" x="8" y="0.0" width="37.5" height="18"/>
@@ -89,37 +86,38 @@
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-t3-cUE" userLabel="digest">
-                                            <rect key="frame" x="8" y="109" width="33" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsY-Mg-dAc" userLabel="replayCount">
-                                            <rect key="frame" x="507" y="109" width="33" height="16"/>
+                                            <rect key="frame" x="510" y="2" width="33" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Foa-dz-7DE" userLabel="source">
-                                            <rect key="frame" x="556" y="108" width="35.5" height="17"/>
+                                            <rect key="frame" x="551" y="2" width="35.5" height="17"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cK0-t3-cUE" userLabel="digest">
+                                            <rect key="frame" x="8" y="223" width="33" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Foa-dz-7DE" secondAttribute="bottom" constant="-3.5" id="3ag-30-Dmg"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Vlx-XY-cdl" secondAttribute="trailing" constant="5.5" id="3m1-K7-Zxe"/>
-                                        <constraint firstItem="0FH-pk-R32" firstAttribute="top" secondItem="Sv1-Mr-gUh" secondAttribute="topMargin" constant="-8" id="4e3-an-JIZ"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="cK0-t3-cUE" secondAttribute="bottom" constant="-3.5" id="5Gf-bk-Tz0"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Foa-dz-7DE" secondAttribute="trailing" constant="0.5" id="Fe3-VV-yyN"/>
-                                        <constraint firstItem="0FH-pk-R32" firstAttribute="leading" secondItem="Sv1-Mr-gUh" secondAttribute="leadingMargin" id="GXu-U3-Gg1"/>
-                                        <constraint firstItem="Foa-dz-7DE" firstAttribute="leading" secondItem="MsY-Mg-dAc" secondAttribute="trailing" constant="16" id="URd-3a-nHT"/>
-                                        <constraint firstItem="Vlx-XY-cdl" firstAttribute="top" secondItem="0FH-pk-R32" secondAttribute="bottom" id="cvk-9F-u3o"/>
-                                        <constraint firstItem="cK0-t3-cUE" firstAttribute="leading" secondItem="Sv1-Mr-gUh" secondAttribute="leadingMargin" id="hkW-Nc-ibr"/>
-                                        <constraint firstItem="Vlx-XY-cdl" firstAttribute="leading" secondItem="Sv1-Mr-gUh" secondAttribute="leadingMargin" id="lZU-bp-7wd"/>
-                                        <constraint firstItem="Foa-dz-7DE" firstAttribute="top" secondItem="MsY-Mg-dAc" secondAttribute="top" constant="-1" id="sVN-oK-Hq7"/>
+                                        <constraint firstItem="cK0-t3-cUE" firstAttribute="leading" secondItem="Sv1-Mr-gUh" secondAttribute="leadingMargin" id="5Gg-TO-3DA"/>
+                                        <constraint firstItem="0FH-pk-R32" firstAttribute="top" secondItem="Sv1-Mr-gUh" secondAttribute="topMargin" constant="-8" id="6GI-P9-1VV"/>
+                                        <constraint firstItem="Vlx-XY-cdl" firstAttribute="top" secondItem="Sv1-Mr-gUh" secondAttribute="topMargin" constant="11" id="Bd8-0I-l5V"/>
+                                        <constraint firstItem="MsY-Mg-dAc" firstAttribute="top" secondItem="Foa-dz-7DE" secondAttribute="top" id="EC6-O5-aa4"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="cK0-t3-cUE" secondAttribute="bottom" constant="-7.5" id="IsA-M3-6aC"/>
+                                        <constraint firstItem="Vlx-XY-cdl" firstAttribute="leading" secondItem="Sv1-Mr-gUh" secondAttribute="leadingMargin" id="OjR-XH-eap"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Foa-dz-7DE" secondAttribute="trailing" constant="5.5" id="Pd3-fm-LIU"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Vlx-XY-cdl" secondAttribute="bottom" constant="12" id="htu-1u-gu0"/>
+                                        <constraint firstItem="Foa-dz-7DE" firstAttribute="leading" secondItem="MsY-Mg-dAc" secondAttribute="trailing" constant="8" id="mRU-Ix-i4A"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Vlx-XY-cdl" secondAttribute="trailing" constant="5.5" id="vsY-no-zpi"/>
+                                        <constraint firstItem="Foa-dz-7DE" firstAttribute="top" secondItem="Sv1-Mr-gUh" secondAttribute="topMargin" constant="-6" id="wpX-ZJ-X2O"/>
+                                        <constraint firstItem="0FH-pk-R32" firstAttribute="leading" secondItem="Sv1-Mr-gUh" secondAttribute="leadingMargin" id="yHA-qp-ilV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
