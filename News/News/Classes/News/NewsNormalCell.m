@@ -48,7 +48,7 @@
             NSDictionary *dic = NewsModel.imgextra[i];
             NSString *urlString = dic[@"imgsrc"];
             
-            NSLog(@"%@",urlString);
+            //NSLog(@"%@",urlString);
             [self.IconViews[i] setImageWithURL:[NSURL URLWithString:urlString]];
         }
     }
