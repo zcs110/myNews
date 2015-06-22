@@ -71,6 +71,7 @@ const char *kPropertiesKey = "kPropertiesKey";
 
 +(void)LoadNewsListWithURLString:(NSString *)urlString finished:(void (^)(NSArray *))finished{
 
+     NSAssert(finished != nil, @"必须传入完成回调");
     [[NetWorkTools ShareNetWorkTools] GET:urlString parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         //NSLog(@"%@", [responseObject keyEnumerator].nextObject);

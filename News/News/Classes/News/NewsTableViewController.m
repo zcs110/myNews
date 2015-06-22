@@ -30,7 +30,7 @@
     //[NewsModel LoadNewsListWithURLString:@"T1348647853363/0-20.html"];
 
     __weak typeof(self) weakSelf = self;
-    [NewsModel LoadNewsListWithURLString:@"T1348647853363/0-20.html" finished:^(NSArray *newsList) {
+    [NewsModel LoadNewsListWithURLString:@"T1422935072191/0-40.html" finished:^(NSArray *newsList) {
         weakSelf.NewsList = newsList;
     }];
 }
@@ -39,9 +39,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 #pragma mark - Table view data source
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
@@ -50,12 +48,20 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *reusedID = @"NormalCell";
+    static NSString *reusedID = nil;
+
+    NewsModel *model = self.NewsList[indexPath.row];
+    if (model.imgextra.count == 2) {
+        reusedID = @"ThreeIconCell";
+
+    }else{
+        reusedID = @"NormalCell";
+    
+    }
+    
     NewsNormalCell *cell = [tableView dequeueReusableCellWithIdentifier:reusedID forIndexPath:indexPath];
     cell.NewsModel = self.NewsList[indexPath.row];
-    
-    
-    
+
     // Configure the cell...
     
     return cell;

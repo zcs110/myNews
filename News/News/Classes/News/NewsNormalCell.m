@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *digestLable;
 @property (weak, nonatomic) IBOutlet UILabel *replayLable;
 @property (weak, nonatomic) IBOutlet UILabel *souceLable;
+@property (strong, nonatomic) IBOutletCollection(UIImageView) NSArray *IconViews;
 
 @end
 
@@ -28,19 +29,29 @@
     self.titleLable.text = NewsModel.title;
     self.digestLable.text = NewsModel.digest;
     self.replayLable.text = [NSString stringWithFormat:@"%zd", NewsModel.replyCount];
+    self.souceLable.alpha = 0.6;
     if (NewsModel.source) {
+        
+        self.souceLable.textColor = [UIColor blackColor];
         self.souceLable.text = NewsModel.source;
     }else{
     
-        self.souceLable.text = @"本报";
+        self.souceLable.text = @"独家";
+        self.souceLable.textColor = [UIColor blueColor];
     }
 
-    NSLog(@"NewsModel.source=%@",NewsModel.source);
+    //NSLog(@"NewsModel.source=%@",NewsModel.source);
     
     [self.iconImage setImageWithURL:[NSURL URLWithString:NewsModel.imgsrc]];
-    
-    
-    
+    if (NewsModel.imgextra.count == 2) {
+        for (int i =0 ; i< NewsModel.imgextra.count; i++) {
+            NSDictionary *dic = NewsModel.imgextra[i];
+            NSString *urlString = dic[@"imgsrc"];
+            
+            NSLog(@"%@",urlString);
+            [self.IconViews[i] setImageWithURL:[NSURL URLWithString:urlString]];
+        }
+    }
 }
 - (void)awakeFromNib {
     // Initialization code
