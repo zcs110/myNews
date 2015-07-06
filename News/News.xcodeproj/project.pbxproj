@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A1F169D94FC8789F5922B555 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E59F5B901445530BE419E849 /* libPods.a */; };
+		AF3D2ABA1B4A217D008A6AA0 /* ChannelLab.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3D2AB91B4A217D008A6AA0 /* ChannelLab.m */; };
 		AF75DFF21B37E5E400570564 /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF75DFF11B37E5E400570564 /* NewsModel.m */; };
 		AF75DFF61B37F42E00570564 /* NSDictionary+EX_ArrayAnd_Dic.m in Sources */ = {isa = PBXBuildFile; fileRef = AF75DFF51B37F42E00570564 /* NSDictionary+EX_ArrayAnd_Dic.m */; };
 		AF75DFF91B37F95B00570564 /* NewsNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF75DFF81B37F95B00570564 /* NewsNormalCell.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		1C65A504FF6D1B565E8EAD38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		76664D90BE280ED3F58888F9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		AF3D2AB81B4A217D008A6AA0 /* ChannelLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelLab.h; sourceTree = "<group>"; };
+		AF3D2AB91B4A217D008A6AA0 /* ChannelLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelLab.m; sourceTree = "<group>"; };
 		AF75DFF01B37E5E400570564 /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		AF75DFF11B37E5E400570564 /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		AF75DFF41B37F42E00570564 /* NSDictionary+EX_ArrayAnd_Dic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+EX_ArrayAnd_Dic.h"; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				AF83D95E1B383059006DD1BC /* topic_news.json */,
 				AF83D9621B3832BA006DD1BC /* Channel.h */,
 				AF83D9631B3832BA006DD1BC /* Channel.m */,
+				AF3D2AB81B4A217D008A6AA0 /* ChannelLab.h */,
+				AF3D2AB91B4A217D008A6AA0 /* ChannelLab.m */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				AF83D9681B38335A006DD1BC /* NSObject+Extension.m in Sources */,
 				AF83D96B1B383A83006DD1BC /* HomeViewController.m in Sources */,
 				AF75DFF61B37F42E00570564 /* NSDictionary+EX_ArrayAnd_Dic.m in Sources */,
+				AF3D2ABA1B4A217D008A6AA0 /* ChannelLab.m in Sources */,
 				AFE924CE1B3737BF00AACFB9 /* NewsTableViewController.m in Sources */,
 				AFE924A71B3735DB00AACFB9 /* AppDelegate.m in Sources */,
 				AF83D9641B3832BA006DD1BC /* Channel.m in Sources */,
