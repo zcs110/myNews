@@ -23,6 +23,21 @@
     
     [self.tableView reloadData];
 }
+- (void)setUrlString:(NSString *)urlString {
+    // urlString仅需要加载数据使用，可以不用记录
+    //    _urlString = urlString;
+    
+    // 清空数据数组
+    self.NewsList = nil;
+    
+    // 测试加载新闻
+    __weak typeof(self) weakSelf = self;
+    // @"T1348649580692/0-40.html"
+    [NewsModel LoadNewsListWithURLString:urlString finished:^(NSArray *newsList) {
+        // 设置数组数值
+        weakSelf.NewsList = newsList;
+    }];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -9,10 +9,13 @@
 #import "HomeViewController.h"
 #import "Channel.h"
 #import "ChannelLab.h"
-@interface HomeViewController ()
+#import "ChannelCell.h"
+@interface HomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UIView *TitleView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrowView;
 @property (nonatomic, strong) NSArray *channelList;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *flowLayout;
 
 @end
 
@@ -49,16 +52,49 @@
     for (Channel *channel in self.channelList ) {
         
         ChannelLab *lab = [ChannelLab LableWithTitle:channel.tname];
-        
         lab.frame = CGRectMake(x, 0, lab.frame.size.width, h);
-        //NSLog(@"%@",NSStringFromCGRect(lab.frame));
         x += lab.frame.size.width;
         [self.scrowView addSubview:lab];
     }
-    
     self.scrowView.contentSize = CGSizeMake(x + margin, h);
-    
 }
 
 
+-(void)viewDidLayoutSubviews{
+
+    [super viewDidLayoutSubviews];
+    [self setupLoad];
+}
+
+-(void)setupLoad{
+
+    self.flowLayout.itemSize = self.collectionView.bounds.size;
+    self.flowLayout.minimumInteritemSpacing = 0;
+    self.flowLayout.minimumLineSpacing = 0;
+    self.flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.collectionView.pagingEnabled = YES;
+
+}
+
+#pragma mark - 数据源方法
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.channelList.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *ReusdeCell = @"CollectionCell";
+    ChannelCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ReusdeCell forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256) / 255.0) green:((float)arc4random_uniform(256) / 255.0) blue:((float)arc4random_uniform(256) / 255.0) alpha:1.0];
+    
+    //cell.urlString = [self.channelList[indexPath.item] urlString];
+    //多控制器时   ***一定要添加子控制器***
+    
+//    if (![self.childViewControllers containsObject:cell.NewsVC]) {
+      //  [self addChildViewController:(UIViewController *)cell.NewsVC];
+//    }
+//    
+//    NSLog(@"%@",self.childViewControllers);
+    return cell;
+}
 @end

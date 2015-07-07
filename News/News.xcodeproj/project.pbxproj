@@ -18,6 +18,9 @@
 		AF83D9641B3832BA006DD1BC /* Channel.m in Sources */ = {isa = PBXBuildFile; fileRef = AF83D9631B3832BA006DD1BC /* Channel.m */; };
 		AF83D9681B38335A006DD1BC /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = AF83D9671B38335A006DD1BC /* NSObject+Extension.m */; };
 		AF83D96B1B383A83006DD1BC /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF83D96A1B383A83006DD1BC /* HomeViewController.m */; };
+		AF9F431E1B4B8E3100FB3ABF /* ChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9F431D1B4B8E3100FB3ABF /* ChannelCell.m */; };
+		AF9F43221B4B995900FB3ABF /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF9F43211B4B995900FB3ABF /* Test.storyboard */; };
+		AF9F432B1B4B9A8A00FB3ABF /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9F432A1B4B9A8A00FB3ABF /* Test.m */; };
 		AFE924A41B3735DB00AACFB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE924A31B3735DB00AACFB9 /* main.m */; };
 		AFE924A71B3735DB00AACFB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFE924A61B3735DB00AACFB9 /* AppDelegate.m */; };
 		AFE924AF1B3735DB00AACFB9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFE924AE1B3735DB00AACFB9 /* Images.xcassets */; };
@@ -58,6 +61,11 @@
 		AF83D9671B38335A006DD1BC /* NSObject+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
 		AF83D9691B383A83006DD1BC /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		AF83D96A1B383A83006DD1BC /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		AF9F431C1B4B8E3100FB3ABF /* ChannelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelCell.h; sourceTree = "<group>"; };
+		AF9F431D1B4B8E3100FB3ABF /* ChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelCell.m; sourceTree = "<group>"; };
+		AF9F43211B4B995900FB3ABF /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
+		AF9F43291B4B9A8A00FB3ABF /* Test.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		AF9F432A1B4B9A8A00FB3ABF /* Test.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		AFE9249E1B3735DB00AACFB9 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFE924A21B3735DB00AACFB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFE924A31B3735DB00AACFB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -138,6 +146,8 @@
 				AF83D9631B3832BA006DD1BC /* Channel.m */,
 				AF3D2AB81B4A217D008A6AA0 /* ChannelLab.h */,
 				AF3D2AB91B4A217D008A6AA0 /* ChannelLab.m */,
+				AF9F431C1B4B8E3100FB3ABF /* ChannelCell.h */,
+				AF9F431D1B4B8E3100FB3ABF /* ChannelCell.m */,
 			);
 			path = Channel;
 			sourceTree = "<group>";
@@ -233,6 +243,9 @@
 				AF7FF0871B37DD93002D2167 /* NetWorkTools.m */,
 				AF83D9661B38335A006DD1BC /* NSObject+Extension.h */,
 				AF83D9671B38335A006DD1BC /* NSObject+Extension.m */,
+				AF9F43211B4B995900FB3ABF /* Test.storyboard */,
+				AF9F43291B4B9A8A00FB3ABF /* Test.h */,
+				AF9F432A1B4B9A8A00FB3ABF /* Test.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -319,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF9F43221B4B995900FB3ABF /* Test.storyboard in Resources */,
 				AFE924B21B3735DB00AACFB9 /* LaunchScreen.xib in Resources */,
 				AF83D9611B383090006DD1BC /* Home.storyboard in Resources */,
 				AFE924CB1B37376E00AACFB9 /* News.storyboard in Resources */,
@@ -375,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF75DFF21B37E5E400570564 /* NewsModel.m in Sources */,
+				AF9F431E1B4B8E3100FB3ABF /* ChannelCell.m in Sources */,
 				AF7FF0881B37DD93002D2167 /* NetWorkTools.m in Sources */,
 				AF83D9681B38335A006DD1BC /* NSObject+Extension.m in Sources */,
 				AF83D96B1B383A83006DD1BC /* HomeViewController.m in Sources */,
@@ -383,6 +398,7 @@
 				AFE924CE1B3737BF00AACFB9 /* NewsTableViewController.m in Sources */,
 				AFE924A71B3735DB00AACFB9 /* AppDelegate.m in Sources */,
 				AF83D9641B3832BA006DD1BC /* Channel.m in Sources */,
+				AF9F432B1B4B9A8A00FB3ABF /* Test.m in Sources */,
 				AFE924A41B3735DB00AACFB9 /* main.m in Sources */,
 				AF75DFF91B37F95B00570564 /* NewsNormalCell.m in Sources */,
 			);

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface NewsTableViewController : UITableViewController
-
+// 新闻地址 URL
+@property (nonatomic, strong) NSString *urlString;
 @end

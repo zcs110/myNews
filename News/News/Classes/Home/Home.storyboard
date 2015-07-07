@@ -32,17 +32,47 @@
                                     <constraint firstAttribute="trailing" secondItem="afE-kk-ha8" secondAttribute="trailing" id="gqc-Ve-DoJ"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="S2r-Ul-jqY">
+                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9dr-2u-2Al">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionCell" id="NXW-4C-M6Q">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="api-Dw-5ue" id="h3y-ya-D8c"/>
+                                    <outlet property="delegate" destination="api-Dw-5ue" id="xhH-aT-mce"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BjC-pw-Yae" firstAttribute="top" secondItem="dZH-uw-ZbF" secondAttribute="bottom" id="2vP-Wr-gzp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BjC-pw-Yae" secondAttribute="trailing" constant="-16" id="3Pw-U9-5ef"/>
+                            <constraint firstItem="S2r-Ul-jqY" firstAttribute="top" secondItem="BjC-pw-Yae" secondAttribute="bottom" id="d1h-UQ-T06"/>
                             <constraint firstItem="BjC-pw-Yae" firstAttribute="leading" secondItem="8bu-hH-TNi" secondAttribute="leadingMargin" constant="-16" id="evh-z3-48c"/>
+                            <constraint firstItem="S2r-Ul-jqY" firstAttribute="leading" secondItem="8bu-hH-TNi" secondAttribute="leadingMargin" constant="-16" id="fMe-pb-6Yw"/>
+                            <constraint firstItem="10P-eR-fvd" firstAttribute="top" secondItem="S2r-Ul-jqY" secondAttribute="bottom" id="lYh-6d-aLQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S2r-Ul-jqY" secondAttribute="trailing" constant="-16" id="xQE-YE-xgK"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="新闻" id="ND6-La-YcE"/>
                     <connections>
                         <outlet property="TitleView" destination="BjC-pw-Yae" id="MTW-af-ilX"/>
+                        <outlet property="collectionView" destination="S2r-Ul-jqY" id="0X8-Xe-y3k"/>
+                        <outlet property="flowLayout" destination="9dr-2u-2Al" id="OCJ-S3-A0j"/>
                         <outlet property="scrowView" destination="afE-kk-ha8" id="B3O-ly-zCP"/>
                     </connections>
                 </viewController>
