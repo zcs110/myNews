@@ -40,15 +40,17 @@
         self.souceLable.textColor = [UIColor blueColor];
     }
 
-    //NSLog(@"NewsModel.source=%@",NewsModel.source);
-    
+    //异步设置图像之前先清理缓存
+    self.iconImage.image = nil;
     [self.iconImage setImageWithURL:[NSURL URLWithString:NewsModel.imgsrc]];
+    //判断是不是有多图
     if (NewsModel.imgextra.count == 2) {
         for (int i =0 ; i< NewsModel.imgextra.count; i++) {
             NSDictionary *dic = NewsModel.imgextra[i];
             NSString *urlString = dic[@"imgsrc"];
             
-            //NSLog(@"%@",urlString);
+           // NSString *deUrl = @"http://img4.imgtn.bdimg.com/it/u=2205791892,1328528914&fm=23&gp=0.jpg";
+            //[self.IconViews[i] setImageWithURL:[NSURL URLWithString:deUrl]];
             [self.IconViews[i] setImageWithURL:[NSURL URLWithString:urlString]];
         }
     }

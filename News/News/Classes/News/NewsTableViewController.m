@@ -20,7 +20,7 @@
 -(void)setNewsList:(NSArray *)NewsList{
 
     _NewsList = NewsList;
-    
+    //刷新表格
     [self.tableView reloadData];
 }
 - (void)setUrlString:(NSString *)urlString {
