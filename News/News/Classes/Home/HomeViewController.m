@@ -91,7 +91,7 @@
 #pragma mark - channelLab Delegate
 
 -(void)channelLabDidSelected:(ChannelLab *)lable{
-    NSLog(@"%zd",lable.tag);
+    //NSLog(@"%zd",lable.tag);
     self.currentIndex = lable.tag;
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:self.currentIndex inSection:0];
     [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
@@ -101,7 +101,21 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     // 当前标签
     ChannelLab *currentLable = self.scrowView.subviews[self.currentIndex];
-    NSLog(@"scrollViewDidScroll %@",currentLable.text);
+    
+    CGFloat offset = currentLable.center.x - self.scrowView.bounds.size.width*0.5;
+    
+    //CGFloat maxOffset = scrollView.contentOffset.x - currentLable.frame.origin.x;
+    if (offset < 0) {
+        offset = 0;
+    }
+    
+    if (self.scrowView.contentSize.width - currentLable.center.x < self.scrowView.bounds.size.width*0.5) {
+        offset = self.scrowView.contentSize.width - self.scrowView.bounds.size.width;
+    }
+    self.scrowView.contentOffset = CGPointMake(offset, 0);
+    
+    
+    NSLog(@"scrollViewDidScroll %02f",self.scrowView.bounds.size.width);
     // 下一个标签
     
     NSArray *indexPath = [self.collectionView indexPathsForVisibleItems];
@@ -113,7 +127,7 @@
         }
         
     }
-    NSLog(@"从 %@ 到 %@",currentLable.text,nextLab.text);
+    //NSLog(@"从 %@ 到 %@",currentLable.text,nextLab.text);
     if (nextLab == nil) {
         return;
     }
