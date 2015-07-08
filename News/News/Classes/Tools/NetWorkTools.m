@@ -16,9 +16,9 @@
     static NetWorkTools *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        //NSURL *baseURL = [NSURL URLWithString:@"http://c.m.163.com/nc/article/headline/"];
+        NSURL *baseURL = [NSURL URLWithString:@"http://c.m.163.com/nc/article/headline/"];
         
-        NSURL *baseURL = [NSURL URLWithString:@"http://localhost/videos.json"];
+        //NSURL *baseURL = [NSURL URLWithString:@"http://localhost/videos.json"];
         NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
         instance = [[self alloc] initWithBaseURL:baseURL sessionConfiguration:config];
        //设置解析的数据格式

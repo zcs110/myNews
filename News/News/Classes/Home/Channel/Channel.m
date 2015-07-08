@@ -10,6 +10,11 @@
 #import "NSObject+Extension.h"
 @implementation Channel
 
+-(void)setTid:(NSString *)tid{
+    _tid = tid.copy;
+    _urlString = [NSString stringWithFormat:@"%@/0-40.html",_tid];
+}
+
 +(NSArray *)channelList{
 
     //1加载 json 的二进制数据

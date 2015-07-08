@@ -44,10 +44,10 @@
 
     //[NewsModel LoadNewsListWithURLString:@"T1348647853363/0-20.html"];
 
-    __weak typeof(self) weakSelf = self;
-    [NewsModel LoadNewsListWithURLString:@"T1348647853363/0-40.html" finished:^(NSArray *newsList) {
-        weakSelf.NewsList = newsList;
-    }];
+//    __weak typeof(self) weakSelf = self;
+//    [NewsModel LoadNewsListWithURLString:@"T1348647853363/0-40.html" finished:^(NSArray *newsList) {
+//        weakSelf.NewsList = newsList;
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {

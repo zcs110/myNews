@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ChannelLabDeleagte;
+
+
 @interface ChannelLab : UILabel
+@property (nonatomic, assign) float scale;
+@property (nonatomic,weak)  id<ChannelLabDeleagte>delegate;
+
 +(instancetype)LableWithTitle:(NSString *)title;
+
+@end
+
+@protocol ChannelLabDeleagte <NSObject>
+
+-(void)channelLabDidSelected:(ChannelLab *)lable;
+
 @end
